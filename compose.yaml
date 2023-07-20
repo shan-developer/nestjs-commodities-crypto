@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest-docker-postgres
+    ports:
+      - '3000:3000'
+    volumes:
+      - /volume1/docker/nestjs-db
+
+    network_mode: bridge
